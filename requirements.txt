@@ -1,0 +1,12 @@
+# Core dependencies (required)
+opencv-python>=4.8.0
+mediapipe>=0.10.0
+numpy>=1.24.0
+
+# Optional: voice input ([H] key). Microphone capture also needs PyAudio.
+# SpeechRecognition>=3.10.0
+# PyAudio>=0.2.14
+
+# Optional: full text decoding for the live OCR scanner ([O] key).
+# Also requires the Tesseract OCR binary installed on the system.
+# pytesseract>=0.3.10

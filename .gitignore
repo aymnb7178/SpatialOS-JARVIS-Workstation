@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Runtime data created by the application
+*.db
+*.sqlite3
+hand_landmarker.task
+SpatialOS_JARVIS_Repo/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
