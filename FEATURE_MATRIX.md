@@ -4,14 +4,19 @@ This matrix lists what is implemented and what has actually been verified. It wa
 
 هذه المصفوفة تبيّن ما هو منفّذ فعلاً وما تم التحقق منه. أُعدّت بقراءة الكود وتشغيل الاختبارات الآلية.
 
-**How it was verified:** all 16 automated tests passed (`python stark_omni_workstation.py --test`) on Python 3.13 in a headless Linux container. Features that need a webcam, a display, a microphone or Windows were **not** exercised.
+**How it was verified:**
+
+- **Automated:** all 16 tests passed (`python stark_omni_workstation.py --test`) on Python 3.13 in a headless Linux container.
+- **Manual (the author, Windows, webcam):** the author ran the program on his own machine. The camera opened and tracked his hand, and the approved-app launcher opened Calculator, Notepad and a terminal window after confirmation. These are marked 🧪 below. No frame-rate measurement was taken.
+- **Not exercised by anyone yet:** microphone / voice input, spoken replies, OCR, the AR anchor and the mouse fallback.
 
 ## Legend / مفتاح الحالات
 
 | Mark | English | العربية |
 |---|---|---|
 | ✅ | Implemented and covered by an automated test | مكتملة ومختبرة آلياً |
-| 🟡 | Implemented, no automated test (needs camera / display / mic); not verified here | مكتملة، غير مختبرة آلياً (تحتاج كاميرا أو شاشة أو ميكروفون) |
+| 🧪 | Implemented, no automated test, and run successfully by hand by the author | مكتملة وجرّبها المؤلف يدوياً بنجاح (بدون اختبار آلي) |
+| 🟡 | Implemented, no automated test (needs camera / display / mic); not verified | مكتملة، غير مختبرة آلياً (تحتاج كاميرا أو شاشة أو ميكروفون) |
 | 🟠 | Partially complete, or depends on an optional component | مكتملة جزئياً أو تعتمد على مكوّن اختياري |
 | ⛔ | Not implemented / blocked by external requirements | غير منفّذة / محجوبة بسبب متطلبات خارجية |
 
@@ -47,7 +52,7 @@ This matrix lists what is implemented and what has actually been verified. It wa
 | Physics engine: hand attractor field and undo / redo stack | ✅ | Spatial 04 | |
 | Nine 3D meshes built | ✅ | Spatial 05 | |
 | 3D tube air sculptor | ✅ | Spatial 06 | |
-| MediaPipe hand tracking (2 hands, 21 landmarks) and distance estimate | 🟡 | none | Needs a webcam. The model file is downloaded on first run. Distance is an uncalibrated heuristic. |
+| MediaPipe hand tracking (2 hands, 21 landmarks) and distance estimate | 🧪 | none | Camera opened and tracking worked on the author's Windows machine. The model file is downloaded on first run. Distance is an uncalibrated heuristic. |
 | Gesture engine: state machine and custom pose learner | 🟡 | none | |
 | AR optical-flow world anchor | 🟡 | none | Lucas-Kanade tracking with an affine estimate. |
 | Scene analyzer: brightness, motion boxes | 🟡 | none | |
@@ -63,7 +68,7 @@ This matrix lists what is implemented and what has actually been verified. It wa
 | Four XR workspaces and TAB switching | 🟡 | none | |
 | Keyboard shortcuts (23 groups) | 🟡 | none | Documented from the key handler in the code. |
 | Gesture OS windows (telemetry, agent status, approved tools) | 🟡 | none | |
-| Approved-app launcher (calculator, Notepad, Command Prompt) | 🟠 | Core 03 covers the confirmation gate only | Launches only on Windows, only after confirmation. |
+| Approved-app launcher (calculator, Notepad, Command Prompt) | 🧪 | Core 03 covers the confirmation gate only | Launches only on Windows, only after confirmation. Calculator, Notepad and a terminal window opened on the author's machine. |
 | Voice input (Arabic `ar-SA`, English `en-US`) | 🟠 | none | Needs optional `SpeechRecognition`, PyAudio and internet (Google recognizer). |
 | Spoken replies | 🟠 | none | Uses Windows PowerShell. Text-only elsewhere. |
 | Mouse fallback when no camera is found | 🟡 | none | |

@@ -38,7 +38,8 @@ This is a personal, single-developer project. The README states what is implemen
 ## What is verified
 
 - **16 automated tests pass** (10 for the core, 6 for the vision / physics engine), run on Python 3.13 in a headless Linux container.
-- **Not exercised in that run:** live webcam tracking, on-screen rendering, microphone input, Windows-only features. They are implemented in the code but have no automated tests.
+- **Run by hand by the author (Windows, webcam):** the camera opens and tracks the hand, and the approved-app launcher opened Calculator, Notepad and a terminal window after confirmation. These have no automated tests.
+- **Not exercised yet:** microphone input, spoken replies, OCR and the AR anchor.
 - **No performance figure is claimed.** The program *requests* 1280×720 at 60 FPS from the camera (`cv2.CAP_PROP_FPS`), but the real frame rate depends on the machine and has not been benchmarked.
 
 ## Architecture
