@@ -39,7 +39,8 @@ This is a personal, single-developer project. The README states what is implemen
 
 - **16 automated tests pass** (10 for the core, 6 for the vision / physics engine), run on Python 3.13 in a headless Linux container.
 - **Run by hand by the author (Windows, webcam), as reported by him:** the camera opens and tracks the hand, every keyboard shortcut responded, and the approved-app launcher opened Calculator, Notepad and a terminal window after confirmation. These have no automated tests and have not been independently reproduced.
-- **Not recorded:** the mouse fallback without a camera, and whether voice and OCR ran with their optional packages or their fallbacks.
+- **Also reported working by him:** voice input, spoken replies and OCR (not recorded whether with the optional packages or their fallbacks).
+- **Not covered:** the mouse fallback without a camera.
 - **No performance figure is claimed.** The program *requests* 1280×720 at 60 FPS from the camera (`cv2.CAP_PROP_FPS`), but the real frame rate depends on the machine and has not been benchmarked.
 
 ## Architecture

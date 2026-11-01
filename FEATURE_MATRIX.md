@@ -8,7 +8,8 @@ This matrix lists what is implemented and what has actually been verified. It wa
 
 - **Automated:** all 16 tests passed (`python stark_omni_workstation.py --test`) on Python 3.13 in a headless Linux container.
 - **Manual (the author, Windows, webcam):** the author ran the program on his own machine and reports that the camera opened and tracked his hand, that he pressed every keyboard shortcut and each one responded, and that the approved-app launcher opened Calculator, Notepad and a terminal window after confirmation. Features covered by that session are marked 🧪 below. This is the author's own report; no frame-rate measurement was taken.
-- **Not covered:** the mouse fallback without a camera. Voice input, spoken replies and OCR were pressed, but whether they used the optional packages (`SpeechRecognition`, `pytesseract`) or their fallbacks is not recorded, so they stay 🟠.
+- **Also reported working by the author:** voice input, spoken replies and OCR. Whether they ran with the optional packages (`SpeechRecognition`, `pytesseract`) or with their fallbacks is not recorded.
+- **Not covered:** the mouse fallback without a camera.
 
 ## Legend / مفتاح الحالات
 
@@ -56,7 +57,7 @@ This matrix lists what is implemented and what has actually been verified. It wa
 | Gesture engine: state machine and custom pose learner | 🧪 | none | |
 | AR optical-flow world anchor | 🧪 | none | Lucas-Kanade tracking with an affine estimate. |
 | Scene analyzer: brightness, motion boxes | 🧪 | none | |
-| Live OCR scanner | 🟠 | none | Full text needs the optional `pytesseract` and the Tesseract binary. Otherwise a Canny edge-density fallback is used. |
+| Live OCR scanner | 🧪 | none | Full text needs the optional `pytesseract` and the Tesseract binary. Otherwise a Canny edge-density fallback is used. |
 | Holographic renderer, glass shader, HDR bloom | 🧪 | none | |
 | Motion recorder (up to 600 frames) and playback | 🧪 | none | Playback speed is fixed at 1.0x. No key changes it. |
 | Tesla landing simulator and Apex AI brain dashboard | 🧪 | none | |
@@ -69,8 +70,8 @@ This matrix lists what is implemented and what has actually been verified. It wa
 | Keyboard shortcuts (23 groups) | 🧪 | none | Documented from the key handler in the code. |
 | Gesture OS windows (telemetry, agent status, approved tools) | 🧪 | none | |
 | Approved-app launcher (calculator, Notepad, Command Prompt) | 🧪 | Core 03 covers the confirmation gate only | Launches only on Windows, only after confirmation. Calculator, Notepad and a terminal window opened on the author's machine. |
-| Voice input (Arabic `ar-SA`, English `en-US`) | 🟠 | none | Needs optional `SpeechRecognition`, PyAudio and internet (Google recognizer). |
-| Spoken replies | 🟠 | none | Uses Windows PowerShell. Text-only elsewhere. |
+| Voice input (Arabic `ar-SA`, English `en-US`) | 🧪 | none | Needs optional `SpeechRecognition`, PyAudio and internet (Google recognizer). |
+| Spoken replies | 🧪 | none | Uses Windows PowerShell. Text-only elsewhere. |
 | Mouse fallback when no camera is found | 🟡 | none | |
 | Repository exporter ([E]) | 🧪 | none | Writes to `./SpatialOS_JARVIS_Repo/`. Its built-in matrix is more optimistic than this file; use this file as the reference. |
 | ROS2 / 3D-printer hardware bus | ⛔ | none | Not implemented. |
